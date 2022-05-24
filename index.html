@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ganchair</title>
+    <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/105324789?v=4">
+    
+    <link rel="stylesheet" href="https://ganchair.github.io/style.css?h=a54aec42096eb77da1d129dacaafd8cddc831ff1cba6365b39869e261a876509">
+    
+</head>
+
+<body>
+    
+    <header class="space">
+        <div class="header2">
+            <img src="https://avatars.githubusercontent.com/u/105324789?v=4" alt="logo" />
+            <h1>ganchair</h1>
+        </div>
+        <br></br>
+        
+        
+        <nav class="header-links">
+            
+            <a href="https:&#x2F;&#x2F;github.com&#x2F;ganchair">GitHub ➚</a>
+            
+            
+            <a href="https:&#x2F;&#x2F;ganchair.github.io&#x2F;about&#x2F;">About</a>
+            
+        </nav>
+        
+    </header>
+    
+    
+    
+    
+    <main>
+        
+        
+        <h2>Recent posts</h2>
+        <ul>
+            
+            <li><a href="https:&#x2F;&#x2F;ganchair.github.io&#x2F;blog&#x2F;hey&#x2F;">Hello Blog</a></li>
+            
+        </ul>
+        <p><a href="https:&#x2F;&#x2F;ganchair.github.io&#x2F;blog&#x2F;">Archive</a></p>
+        
+    </main>
+    
+    
+    <div class="dark-mode-buttons">
+        <button class="dark-mode-button" id="dark-mode-on"><img src="https://ganchair.github.io/dark_mode.svg" width="24"
+                height="24" alt=""></button>
+        <button class="dark-mode-button" id="dark-mode-off"><img src="https://ganchair.github.io/light_mode.svg" width="24"
+                height="24" alt=""></button>
+    </div>
+    <script>
+        const cls = document.body.classList;
+        const getSessionTheme = sessionStorage.getItem("theme");
+        if (getSessionTheme === "dark") {
+            cls.toggle("dark-mode", true);
+        } else if (getSessionTheme === "light") {
+            cls.toggle("dark-mode", false);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            cls.toggle("dark-mode", true);
+        }
+
+        document.getElementById("dark-mode-on").addEventListener("click", function (e) {
+            cls.toggle("dark-mode", true);
+            sessionStorage.setItem("theme", "dark");
+        });
+        document.getElementById("dark-mode-off").addEventListener("click", function (e) {
+            cls.toggle("dark-mode", false);
+            sessionStorage.setItem("theme", "light");
+        });
+    </script>
+    <noscript>
+        <style>
+            .dark-mode-buttons {
+                display: none;
+            }
+        </style>
+    </noscript>
+</body>
+
+</html>
